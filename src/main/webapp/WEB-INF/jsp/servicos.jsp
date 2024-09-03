@@ -21,7 +21,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <img src="./src/main/resources/imagens/android.png" alt="Android" width="300">
+            <img src="imagens/android.png" alt="Android" width="300">
         </div>
     </div>
     <jps:include page="layouttopo.jps"></jps:include>

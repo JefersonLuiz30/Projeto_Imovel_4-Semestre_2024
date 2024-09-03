@@ -22,6 +22,12 @@
 		          <li class="nav-item">
 		            <a class="nav-link" href="/index">Página Inicial</a>
 		          </li>
+				  <li class="nav-item">
+		            <a class="nav-link" href="/empresa">Empresa</a>
+		          </li>
+				  <li class="nav-item">
+		            <a class="nav-link" href="/servicos">Serviços</a>
+		          </li>
 			      <li class="nav-item dropdown">
 			          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
 			          role="button" data-bs-toggle="dropdown" aria-expanded="false">
