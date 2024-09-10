@@ -28,6 +28,9 @@
 				  <li class="nav-item">
 		            <a class="nav-link" href="/servicos">Serviços</a>
 		          </li>
+				  <li class="nav-item">
+		            <a class="nav-link" href="/contatos">Contatos</a>
+		          </li>
 			      <li class="nav-item dropdown">
 			          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
 			          role="button" data-bs-toggle="dropdown" aria-expanded="false">
