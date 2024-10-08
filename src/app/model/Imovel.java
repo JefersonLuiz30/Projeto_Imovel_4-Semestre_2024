@@ -1,6 +1,6 @@
 package app.model;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
+
 
 //class modelo de representação de um objeto
 public class Imovel {
