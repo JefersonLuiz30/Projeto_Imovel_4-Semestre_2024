@@ -23,6 +23,9 @@
 		            <a class="nav-link" href="/index">Página Inicial</a>
 		          </li>
 				  <li class="nav-item">
+		            <a class="nav-link" href="/cadastrarimovel">Cadastrar Imovel</a>
+		          </li>
+				  <li class="nav-item">
 		            <a class="nav-link" href="/empresa">Empresa</a>
 		          </li>
 				  <li class="nav-item">

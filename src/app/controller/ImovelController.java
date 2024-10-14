@@ -9,7 +9,7 @@ import app.service.ImovelService;
 public class ImovelController {
     private ImovelService imovelService=new ImovelService();
 
-    @GetMapping("/cadastrar imovel")
+    @GetMapping("/cadastrarimovel")
     public String cadastrar(){
         return "cadastrarimovel";
 
