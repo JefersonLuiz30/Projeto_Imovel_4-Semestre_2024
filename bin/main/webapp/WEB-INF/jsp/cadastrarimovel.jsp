@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <jsp:include page="layouttopo.jsp"></jsp:include>
 
 <!DOCTYPE html>
@@ -16,25 +19,25 @@
 
 <div class="container">
     <h2>Cadastro de Imóvel</h2>
-    <form>
+    <form:form action="/cadastrarimovel" modelAttribute="imovel">
         <div class="form-group">
             <label for="rua">Rua</label>
-            <input type="text" class="form-control" id="rua" placeholder="Digite a rua" required>
+            <input type="text" class="form-control" id="rua" name="rua" placeholder="Digite a rua" required>
         </div>
         <div class="form-group">
             <label for="numero">Número</label>
-            <input type="number" class="form-control" id="numero" placeholder="Digite o número" required>
+            <input type="number" class="form-control" id="numero" name="numero" placeholder="Digite o número" required>
         </div>
         <div class="form-group">
             <label for="tamanho">Tamanho (m²)</label>
-            <input type="number" class="form-control" id="tamanho" placeholder="Digite o tamanho" required>
+            <input type="number" class="form-control" id="tamanho" name="tamanho" placeholder="Digite o tamanho" required>
         </div>
         <div class="form-group">
             <label for="valor">Valor (R$)</label>
-            <input type="number" class="form-control" id="valor" placeholder="Digite o valor" required>
+            <input type="number" class="form-control" id="valor" name="valor" placeholder="Digite o valor" required>
         </div>
         <button type="submit" class="btn btn-primary">Cadastrar</button>
-    </form>
+    </form:form>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

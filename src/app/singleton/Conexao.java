@@ -9,7 +9,7 @@ public class Conexao {
     private static Conexao instancia;
     private Connection connection;
     private String drive = "com.mysql.jdbc.Driver";
-    private String url = "jdbc.mysql://localhost/dbds2imovel";
+    private String url = "jdbc:mysql://localhost/dbds2imovel";
     private String usuario = "root";
     private String senha = "";
 

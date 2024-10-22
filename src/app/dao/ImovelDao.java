@@ -1,11 +1,10 @@
 package app.dao;
 
+import app.model.Imovel;
+import app.singleton.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
-import app.model.Imovel;
-import app.singleton.Conexao;
 
 public class ImovelDao {
     private Connection connection;
@@ -15,7 +14,7 @@ public class ImovelDao {
     }
     public String salvar(Imovel imovel) {
         String sql = "INSERT INTO imovel (rua, numero, tamanho, valor) "+
-        "VALUES ('?, ?, ?, ?')";
+        "VALUES (?, ?, ?, ?)";
 
         try {
             PreparedStatement ps= this.connection.prepareStatement(sql);
