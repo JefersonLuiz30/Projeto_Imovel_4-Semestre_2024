@@ -25,4 +25,10 @@ public class ImovelController {
         return "mensagem";
 
     }
+
+    @GetMapping("/listarimoveis")
+    public String listar(Model model){
+        model.addAttribute("listaImoveis", imovelService.listar());
+        return "listarimoveis";
+    }
 }

@@ -4,6 +4,7 @@ import app.model.Imovel;
 import app.singleton.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,17 +41,16 @@ public class ImovelDao {
 
     public List<Imovel> listar() {
         List<Imovel> listaImoveis = new ArrayList<>();
-        String sql = "SELECT*FROM imovel";
+        String sql = "SELECT * FROM imovel";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Imovel imovel = new Imovel();
-                imovel.setCodigo(rs.getint("codigo"));
+                imovel.setCodigo(rs.getInt("codigo"));
                 imovel.setRua(rs.getString("rua"));
                 imovel.setNumero(rs.getString("numero"));
                 imovel.setTamanho(rs.getDouble("Tamanho"));
-                imovel.setValor(rs.getDouble("valor"));
                 listaImoveis.add(imovel);
             }
             ps.close();
