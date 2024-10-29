@@ -60,4 +60,27 @@ public class ImovelDao {
         }
         return listaImoveis;
     }
+
+    public List<Imovel> procurar(String rua) {
+        List<Imovel> listaImoveis = new ArrayList<>();
+        String sql = "SELECT * FROM imovel WHERE rua LIKE ? ";
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, "%" + rua + "%"); //Rua prudente de moraes
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Imovel imovel = new Imovel();
+                imovel.setCodigo(rs.getInt("codigo"));
+                imovel.setRua(rs.getString("rua"));
+                imovel.setNumero(rs.getString("numero"));
+                imovel.setTamanho(rs.getDouble("Tamanho"));
+                listaImoveis.add(imovel);
+            }
+            ps.close();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return listaImoveis;
+    }
 }
