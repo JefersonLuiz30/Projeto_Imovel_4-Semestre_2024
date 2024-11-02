@@ -33,11 +33,18 @@ public class ImovelController {
         return "listarimoveis";
     }
 
-    @GetMapping("/procurarimoveis")
+    @GetMapping("/procurarimoveisrua")
     public String procurar(HttpServletRequest req, Model model) {
         String rua = req.getParameter("descricao");
         model.addAttribute("listaImoveis", imovelService.procurar(rua));
         return "listarimoveis";
-
     }
+
+    @GetMapping("/procurarimoveisnumero")
+    public String procurarNum(HttpServletRequest req, Model model) {
+        String numero = req.getParameter("descricao");
+        model.addAttribute("listaImoveis", imovelService.procurarNum(numero));
+        return "listarimoveis";
+    }
+
 }

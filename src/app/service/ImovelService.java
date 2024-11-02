@@ -23,4 +23,9 @@ public class ImovelService {
     public List<Imovel> procurar(String rua) {
         return this.imovelDao.procurar(rua);
     }
+
+    public List<Imovel> procurarNum(String numero) {
+        return this.imovelDao.procurarNum(numero);
+    }
+
 }
