@@ -34,18 +34,27 @@ public class ImovelController {
         return "listarimoveis";
     }
 
-    @GetMapping("/procurarimoveis")
+    @GetMapping("/procurarimoveisrua")
     public String procurar(HttpServletRequest req, Model model) {
         String rua = req.getParameter("descricao");
         model.addAttribute("listaImoveis", imovelService.procurar(rua));
         return "listarimoveis";
-
     }
 
+<<<<<<< HEAD
     @GetMapping("/alterarimovel")
     public String alterar(HttpServletRequest req, Model model) {
         int codigo = Integer.parseInt(req.getParameter("codigo"));
         model.addAttribute("imovel", imovelService.getPorCodigo(codigo));
         return "alterarimovel";
     }
+=======
+    @GetMapping("/procurarimoveisnumero")
+    public String procurarNum(HttpServletRequest req, Model model) {
+        String numero = req.getParameter("descricao");
+        model.addAttribute("listaImoveis", imovelService.procurarNum(numero));
+        return "listarimoveis";
+    }
+
+>>>>>>> df73ff32d7dd716ca7167be92663febc51939c49
 }

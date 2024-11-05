@@ -16,6 +16,7 @@ public class ImovelDao {
         this.connection = Conexao.getInstancia().getConexao();
     }
 
+    // SALVAR OS DADOS NO BANCO
     public String salvar(Imovel imovel) {
         String sql = "INSERT INTO imovel (rua, numero, tamanho, valor) " +
                 "VALUES (?, ?, ?, ?)";
@@ -39,6 +40,7 @@ public class ImovelDao {
         }
     }
 
+    // LISTAR OS DADOS DO BANCO
     public List<Imovel> listar() {
         List<Imovel> listaImoveis = new ArrayList<>();
         String sql = "SELECT * FROM imovel";
@@ -51,6 +53,7 @@ public class ImovelDao {
                 imovel.setRua(rs.getString("rua"));
                 imovel.setNumero(rs.getString("numero"));
                 imovel.setTamanho(rs.getDouble("Tamanho"));
+                imovel.setValor(rs.getDouble("Valor"));
                 listaImoveis.add(imovel);
             }
             ps.close();
@@ -61,12 +64,41 @@ public class ImovelDao {
         return listaImoveis;
     }
 
+    // PROCURAR OS DADOS NO BANCO PELO NOME DA RUA
     public List<Imovel> procurar(String rua) {
         List<Imovel> listaImoveis = new ArrayList<>();
         String sql = "SELECT * FROM imovel WHERE rua LIKE ? ";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, "%" + rua + "%"); // Rua prudente de moraes
+<<<<<<< HEAD
+=======
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Imovel imovel = new Imovel();
+                imovel.setCodigo(rs.getInt("codigo"));
+                imovel.setRua(rs.getString("rua"));
+                imovel.setNumero(rs.getString("numero"));
+                imovel.setTamanho(rs.getDouble("Tamanho"));
+                imovel.setValor(rs.getDouble("Valor"));
+                listaImoveis.add(imovel);
+            }
+            ps.close();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return listaImoveis;
+    }
+
+    // PROCURAR OS DADOS NO BANCO PELO NUMERO
+    public List<Imovel> procurarNum(String numero) {
+        List<Imovel> listaImoveis = new ArrayList<>();
+        String sql = "SELECT * FROM imovel WHERE numero LIKE ? ";
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, "%" + numero + "%"); // Rua prudente de moraes
+>>>>>>> df73ff32d7dd716ca7167be92663febc51939c49
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Imovel imovel = new Imovel();
