@@ -18,8 +18,14 @@ public class ImovelDao {
 
     // SALVAR OS DADOS NO BANCO
     public String salvar(Imovel imovel) {
-        String sql = "INSERT INTO imovel (rua, numero, tamanho, valor) " +
-                "VALUES (?, ?, ?, ?)";
+        String sql = "";
+        if (imovel.getCodigo() > 0) {
+            sql = "UPDATE imovel SET rua=?, numero=?, tamanho=?," + "valor=? WHERE codigo=?";
+
+        } else {
+            sql = "INSERT INTO imovel (rua, numero, tamanho, valor) " +
+                    "VALUES (?, ?, ?, ?)";
+        }
 
         try {
             PreparedStatement ps = this.connection.prepareStatement(sql);
@@ -27,6 +33,8 @@ public class ImovelDao {
             ps.setString(2, imovel.getNumero());
             ps.setDouble(3, imovel.getTamanho());
             ps.setDouble(4, imovel.getValor());
+            if (imovel.getCodigo() > 0)
+                ps.setInt(5, imovel.getCodigo());
 
             ps.execute();
             ps.close();
