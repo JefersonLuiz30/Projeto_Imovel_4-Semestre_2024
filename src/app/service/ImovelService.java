@@ -23,4 +23,8 @@ public class ImovelService {
     public List<Imovel> procurar(String rua) {
         return this.imovelDao.procurar(rua);
     }
+
+    public Imovel getPorCodigo(int codigo) {
+        return this.imovelDao.getPorCodigo(codigo);
+    }
 }
