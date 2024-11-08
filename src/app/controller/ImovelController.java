@@ -41,20 +41,11 @@ public class ImovelController {
         return "listarimoveis";
     }
 
-<<<<<<< HEAD
     @GetMapping("/alterarimovel")
     public String alterar(HttpServletRequest req, Model model) {
         int codigo = Integer.parseInt(req.getParameter("codigo"));
         model.addAttribute("imovel", imovelService.getPorCodigo(codigo));
         return "alterarimovel";
     }
-=======
-    @GetMapping("/procurarimoveisnumero")
-    public String procurarNum(HttpServletRequest req, Model model) {
-        String numero = req.getParameter("descricao");
-        model.addAttribute("listaImoveis", imovelService.procurarNum(numero));
-        return "listarimoveis";
-    }
 
->>>>>>> df73ff32d7dd716ca7167be92663febc51939c49
 }

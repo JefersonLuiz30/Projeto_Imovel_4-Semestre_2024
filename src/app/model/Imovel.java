@@ -1,7 +1,5 @@
 package app.model;
 
-
-
 //class modelo de representação de um objeto
 public class Imovel {
 
@@ -10,28 +8,19 @@ public class Imovel {
     // tem acesso)
     // pulic abre acesso a todas as areas do sitema
 
-
-    //Selecionar Gett and setter
+    // Selecionar Gett and setter
     private int codigo;
     private String rua;
     private String numero;
     private double tamanho;
     private double valor;
 
-    public double getValor() {
-        return valor;
+    public String getRua() {
+        return rua;
     }
 
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-
-    public double getTamanho() {
-        return tamanho;
-    }
-
-    public void setTamanho(double tamanho) {
-        this.tamanho = tamanho;
+    public void setRua(String rua) {
+        this.rua = rua;
     }
 
     public String getNumero() {
@@ -42,12 +31,20 @@ public class Imovel {
         this.numero = numero;
     }
 
-    public String getRua() {
-        return rua;
+    public double getTamanho() {
+        return tamanho;
     }
 
-    public void setRua(String rua) {
-        this.rua = rua;
+    public void setTamanho(double tamanho) {
+        this.tamanho = tamanho;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
     }
 
     // metodo get ler informação
@@ -60,8 +57,9 @@ public class Imovel {
         this.codigo = codigo;
     }
 
-    //Incapsulamento é conjunto de boas praticas ao objeto , melhora manutenção e organização.
-    //imovel.codigo=10; ( vc insere o valor diretamente)
-    //imovel.setCodigo(10); (Aqui vc pede para o set alterar o valor (Boa pratica))
+    // Incapsulamento é conjunto de boas praticas ao objeto , melhora manutenção e
+    // organização.
+    // imovel.codigo=10; ( vc insere o valor diretamente)
+    // imovel.setCodigo(10); (Aqui vc pede para o set alterar o valor (Boa pratica))
 
 }

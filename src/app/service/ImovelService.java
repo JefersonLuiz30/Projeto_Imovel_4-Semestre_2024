@@ -20,18 +20,16 @@ public class ImovelService {
         return this.imovelDao.listar();
     }
 
-    public List<Imovel> procurar(String rua) {
-        return this.imovelDao.procurar(rua);
+    public List<Imovel> procurar(String rua, int numero) {
+        return this.imovelDao.procurar(rua, numero);
     }
 
-<<<<<<< HEAD
     public Imovel getPorCodigo(int codigo) {
         return this.imovelDao.getPorCodigo(codigo);
     }
-=======
-    public List<Imovel> procurarNum(String numero) {
-        return this.imovelDao.procurarNum(numero);
-    }
 
->>>>>>> df73ff32d7dd716ca7167be92663febc51939c49
+    // public List<Imovel> procurarNum(String numero) {
+    // return this.imovelDao.procurarNum(numero);
+    // }
+
 }

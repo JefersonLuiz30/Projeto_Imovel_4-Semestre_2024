@@ -59,7 +59,7 @@
 								</ul>
 							</li>
 						</ul>
-						<form class="d-flex" method="GET" action="/procurarimoveisrua" action="/procurarimoveisnumero">
+						<form class="d-flex" method="GET" action="/procurarimoveisrua">
 							<input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search"
 								name="descricao">
 							<button class="btn btn-outline-success" type="submit">Procurar</button>
