@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import jakarta.servlet.http.HttpServletRequest;
 
 import app.model.Imovel;
-import app.service.ImovelService;
+import app.service.ImoveisService;
 import javax.management.modelmbean.ModelMBean;
 
 @Controller
 public class ImovelController {
-    private ImovelService imovelService = new ImovelService();
+    private ImoveisService imovelService = new ImoveisService();
 
     @GetMapping("/cadastrarimovel")
     public String cadastrar() {
@@ -46,6 +46,12 @@ public class ImovelController {
         int codigo = Integer.parseInt(req.getParameter("codigo"));
         model.addAttribute("imovel", imovelService.getPorCodigo(codigo));
         return "alterarimovel";
+    }
+
+    @PostMapping("/alterarimovel")
+    public String alterarImovel(@ModelAttribute("imovel") Imovel imovel, Model model) {
+        model.addAttribute("texto", imovelService.salvar(imovel));
+        return "mensagem";
     }
 
 }

@@ -8,7 +8,7 @@ import app.dao.ImovelDao;
 import app.model.Imovel;
 
 @Service
-public class ImovelService {
+public class ImoveisService {
     private ImovelDao imovelDao = new ImovelDao();
 
     public String salvar(Imovel imovel) {
@@ -28,8 +28,5 @@ public class ImovelService {
         return this.imovelDao.getPorCodigo(codigo);
     }
 
-    // public List<Imovel> procurarNum(String numero) {
-    // return this.imovelDao.procurarNum(numero);
-    // }
 
 }
