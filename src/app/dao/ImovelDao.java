@@ -116,4 +116,18 @@ public class ImovelDao {
         }
         return imovel;
     }
+
+    public String excluir(int codigo) {
+        String sql = "DELETE FROM imovel WHERE codigo = ?";
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setInt(1, codigo);
+            ps.execute();
+            return "Imovel excluido";
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "Houve um erro! Tente novamete";
+        }
+    }
 }
