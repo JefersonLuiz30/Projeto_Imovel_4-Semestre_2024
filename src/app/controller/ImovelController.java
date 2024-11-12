@@ -54,4 +54,11 @@ public class ImovelController {
         return "mensagem";
     }
 
+    @GetMapping("/excluirimovel")
+    public String excluir(HttpServletRequest req, Model model) {
+        int codigo = Integer.parseInt(req.getParameter("codigo"));
+        model.addAttribute("texto", imovelService.excluir(codigo));
+        return "mensagem";
+    }
+
 }

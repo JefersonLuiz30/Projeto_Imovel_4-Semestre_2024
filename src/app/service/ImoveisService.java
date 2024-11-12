@@ -28,5 +28,8 @@ public class ImoveisService {
         return this.imovelDao.getPorCodigo(codigo);
     }
 
+    public String excluir(int codigo) {
+        return this.imovelDao.excluir(codigo);
+    }
 
 }
