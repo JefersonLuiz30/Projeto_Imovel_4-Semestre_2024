@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 
 import app.model.Imovel;
 import app.service.ImoveisService;
-import javax.management.modelmbean.ModelMBean;
+// import javax.management.modelmbean.ModelMBean;
 
 @Controller
 public class ImovelController {
@@ -37,7 +37,8 @@ public class ImovelController {
     @GetMapping("/procurarimoveisrua")
     public String procurar(HttpServletRequest req, Model model) {
         String rua = req.getParameter("descricao");
-        model.addAttribute("listaImoveis", imovelService.procurar(rua));
+        String numero = req.getParameter("numero");
+        model.addAttribute("listaImoveis", imovelService.procurar(rua, numero));
         return "listarimoveis";
     }
 

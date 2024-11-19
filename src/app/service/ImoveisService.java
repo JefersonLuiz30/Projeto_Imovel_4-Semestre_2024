@@ -20,7 +20,7 @@ public class ImoveisService {
         return this.imovelDao.listar();
     }
 
-    public List<Imovel> procurar(String rua, int numero) {
+    public List<Imovel> procurar(String rua, String numero) {
         return this.imovelDao.procurar(rua, numero);
     }
 

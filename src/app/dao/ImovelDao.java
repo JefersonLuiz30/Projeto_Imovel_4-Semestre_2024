@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+// import javax.swing.JOptionPane;
+
 public class ImovelDao {
     private Connection connection;
 
@@ -71,7 +73,7 @@ public class ImovelDao {
     }
 
     // PROCURAR OS DADOS NO BANCO PELO NOME DA RUA E NUMERO DA RUA
-    public List<Imovel> procurar(String rua, int numero) {
+    public List<Imovel> procurar(String rua, String numero) {
         List<Imovel> listaImoveis = new ArrayList<>();
         String sql = "SELECT * FROM imovel WHERE rua LIKE ? OR numero LIKE ?";
         try {
@@ -130,4 +132,30 @@ public class ImovelDao {
             return "Houve um erro! Tente novamete";
         }
     }
+
+    // public String excluir(int codigo) {
+    // // Exibe uma caixa de diálogo para confirmar a exclusão
+    // int confirmacao = JOptionPane.showConfirmDialog(
+    // null,
+    // "Tem certeza que deseja excluir o imóvel com código " + codigo + "?",
+    // "Confirmação de Exclusão",
+    // JOptionPane.YES_NO_OPTION
+    // );
+
+    // // Verifica a resposta do usuário
+    // if (confirmacao == JOptionPane.YES_OPTION) {
+    // String sql = "DELETE FROM imovel WHERE codigo = ?";
+    // try {
+    // PreparedStatement ps = connection.prepareStatement(sql);
+    // ps.setInt(1, codigo);
+    // ps.execute();
+    // return "Imóvel excluído com sucesso.";
+    // } catch (SQLException e) {
+    // e.printStackTrace();
+    // return "Houve um erro ao excluir! Tente novamente.";
+    // }
+    // } else {
+    // return "Operação de exclusão cancelada.";
+    // }
+    // }
 }
